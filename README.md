@@ -16,7 +16,7 @@ The last exercises builds the skeleton of a CQRS solution on top of the event so
  ### Exercise 2: Basic UserAggregate
 
   1. Add a class called `UserAggregate` to `Domain`. Add name, password hash, and id properties to `UserAggregate`
-  1. Add two event type classes to 'Domain`: 'UserCreated` and `PasswordUpdated`. What data should be in each one? Add that as properties to each event.
+  1. Add two event type classes to `Domain`: `UserCreated` and `PasswordUpdated`. What data should be in each one? Add that as properties to each event.
   1. Add methods `public void Apply(UserCreated @event)` and `public void Apply(PasswordUpdated @event)`. These should do state changes to the `UserAggregate` that correspond to each event.
   1. Add a new test. The test should add a `UserCreated` event and a `PasswordUpdated` event to new `UserAggregate` stream. Adding to a stream is done like this: `session.Events.StartStream<UserAggregate>(event1, event2)`.
   1. Run the test and look in the database
